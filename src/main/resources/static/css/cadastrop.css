@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+#form-container{
+    margin: 10px auto;
+    width: 600px;
+}
+
+#textcadastro{
+    text-align: center;
+    font-size: 35px;
+    padding-top: initial;
+}
+
+.button{
+    margin-top: 30px;
+    justify-content: space-between;
+    display: flex;
+}
+
+#input-id{
+    width: 100px;
+    text-align: center;
+}
+
+.form-control{
+    margin-bottom: 5px;
+}
+
+#parte-contato{
+	display: flex;
+	justify-content: space-between;
+}
+

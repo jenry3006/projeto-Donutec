@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+#header{
+    border-width: 3px;
+    border-color: rgb(0,0,0);
+    border-style: solid;
+}
+
+#parte-esq  a{
+    font-size: 30px;
+    color: #000;
+    text-decoration: none;
+    margin-left: 150px; 
+    font-family: cursive;
+}
+
+#parte-esq {
+    width: 35%;
+    height: 50px;
+    background-color: #F1C40F;
+    float: left;
+}
+
+#parte-dir {
+    height: 50px;
+    background-color: #F1C40F;
+}
+
+.dropdown {
+    text-align: center;
+}
+
+.row {
+    padding-top: 5px;
+    justify-content: space-around;
+}

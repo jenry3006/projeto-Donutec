@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="head :: head">
+<meta charset="utf-8">
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+</head>
+<body>
+
+	<link rel="stylesheet" href="/css/cadastroc.css">
+	<link rel="stylesheet" href="/css/header.css">
+
+	<header th:insert="head :: header-fixo"></header>
+
+	<div class="container">
+		<div id="form-container">
+			<p id="textcadastro">CADASTRAR CLIENTE</p>
+			<div class="form-floating mb-3">
+
+				<form action="#" th:action="@{/cliente/salvar}" method="post">
+					<div class="alert alert-danger"
+						th:if="${not #strings.isEmpty(erros)}">
+						<div th:each="erro : ${erros}">
+							<span th:text="${erro.getDefaultMessage()}"></span>
+						</div>
+					</div>
+
+					<label for="">Nome: <span style="color: red;">*</span></label> <input
+						id="nome" name="nome" th:value="${cliente.nome}" type="text"
+						class="form-control" required> <label for="">Endereço:
+						<span style="color: red;">*</span>
+					</label> <input id="endereco" name="endereco"
+						th:value="${cliente.endereco}" type="text" class="form-control"
+						required> <label>Contato: <span
+						style="color: red;">*</span></label> <span
+						style="color: red; margin-left: 450px;">*</span>
+					<div id="parte-contato">
+						<input id="contato" name="contato" th:value="${cliente.contato}"
+							type="text" class="form-control" style="width: 250px" required>
+
+
+						<select name="tipoContato" th:value="${cliente.tipoContato}"
+							class="form-select" aria-label="Default select example">
+							<option disabled selected>Seleciona o tipo de contato:</option>
+							<option
+								th:each="tiposOpt : ${T(com.jenry.model.TipoContato).values()}"
+								th:value="${tiposOpt}" th:text="${tiposOpt}"></option>
+						</select> <br>
+					</div>
+
+					<label for="">Data de nascimento:</label> <input
+						name="dataNascimento" id="dataNascimento" type="date"
+						th:value="${#temporals.format(cliente.dataNascimento, 'yyyy-MM-dd')}"
+						class="form-control">
+
+					<div class="button">
+						<div>
+							<button type="button" onclick="limpar()"
+								class="btn btn-primary btn-lg">LIMPAR</button>
+						</div>
+						<input type="hidden" id="id" name="id" th:value="${cliente.id}"
+							th:if="${cliente != null}" />
+						<div>
+							<button type="submit" class="btn btn-success btn-lg">SALVAR</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function limpar() {
+			$("input").val("");
+		}
+	</script>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+</body>
+</html>

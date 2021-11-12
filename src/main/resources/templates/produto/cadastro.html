@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="head :: head">
+    <meta charset="utf-8">
+</head>
+<body>
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/cadastrop.css">
+
+<header th:insert="head :: header-fixo"></header>
+
+<div class="container">
+    <div id="form-container">
+        <p id="textcadastro">CADASTRAR PRODUTO</p>
+        <div class="form-floating mb-3">
+            <form action="#" th:action="@{/produto/salvar}" method="post">
+                <div class="alert alert-danger"
+                     th:if="${not #strings.isEmpty(erros)}">
+                    <div th:each="erro : ${erros}">
+                        <span th:text="${erro.getDefaultMessage()}"></span>
+                    </div>
+                </div>
+                <label >Descrição:<span style="color: red ;">*</span></label>
+                <input id="descricao" name="descricao" th:value="${produto.descricao}" type="text" class="form-control"
+                       required>
+
+                <label >Sabor Cobertura:<span style="color: red ;">*</span></label>
+                <input id="saborCobertura" name="saborCobertura" th:value="${produto.saborCobertura}" type="text"
+                       class="form-control" required>
+
+                <label >Valor de venda:<span style="color: red ;">*</span></label>
+                <input id="valor" name="valor" th:value="${produto.valor}" type="text" class="form-control" required>
+
+				 <label for="exampleFormControlTextarea1" class="form-label">Observação:</label>
+  					<textarea class="form-control" name="obs" id="exampleFormControlTextarea1" rows="3" th:value="${produto.obs}"></textarea>
+                <div class="button">
+                    <div>
+                        <button type="reset" class="btn btn-primary btn-lg">LIMPAR</button>
+                    </div>
+                    <input type="hidden" id="id" name="id" th:value="${produto.id}"
+                           th:if="${produto != null}"/>
+                    <div>
+                        <button type="submit" class="btn btn-success btn-lg">SALVAR</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
