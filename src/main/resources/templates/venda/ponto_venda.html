@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="head :: head">
+<meta charset="utf-8">
+
+</head>
+
+<title>Ponto de Venda | DONUTEC</title>
+<body>
+
+	<link rel="stylesheet" href="/css/pdv.css">
+	<link rel="stylesheet" href="/css/header.css">
+
+	<header th:insert="head :: header-fixo"></header>
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5 estilo1">
+				<div class="row">
+					<div class="col-md-12" id="btn-cdgc">
+						<nav class="navbar navbar-light bg-light">
+							<div class="container-fluid">
+								<form class="d-flex">
+									<input class="form-control me-2" type="search"
+										placeholder="Informar o nome" aria-label="Search">
+									<button class="btn btn-outline-success" type="submit">Buscar</button>
+								</form>
+							</div>
+						</nav>
+						<!-- Button trigger modal -->
+						<button id="btn-modal" type="button" class="btn btn-primary"
+							data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+							>Cadastrar</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="staticBackdrop"
+							data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+							aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel"
+											style="margin-left: 136px;">CADASTRAR CLIENTE</h5>
+										<button type="button" class="btn-close"
+											data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<div class="container">
+											<div id="form-container">
+
+												<div class="form-floating mb-3">
+
+													<form action="salvar">
+														<label>Nome:<span style="color: red;">*</span></label> <input
+															id="nome" name="cliente.nome" th:value="${nome}"
+															type="text" class="form-control" required> <label>Endereço:
+															<span style="color: red;">*</span>
+														</label> <input id="endereco" name="endereco" type="text"
+															class="form-control" required> <label>Contato:
+															<span style="color: red;">*</span>
+														</label> <input id="contato" name="contato" type="text"
+															class="form-control" required
+															style="margin-bottom: 20px;"> <select
+															name="tipoContato" class="form-select"
+															aria-label="Default select example"
+															style="margin-bottom: 20px;">
+															<option disabled selected>Seleciona o tipo de
+																contato:</option>
+															<option>WHATSAPP</option>
+															<option>INSTAGRAM</option>
+														</select> <label>Data de Nascimento:</label> <input
+															name="dataNasc" id="dataNasc" type="date"
+															class="form-control">
+
+														<div class="button">
+															<div>
+																<button type="reset" class="btn btn-primary btn-lg">LIMPAR</button>
+															</div>
+															<input type="hidden" id="idCliente" name="idCliente"
+																th:value="${cliente.idCliente}" th:if="${cliente != null}" />
+															<div>
+																<button type="submit" class="btn btn-success btn-lg">SALVAR</button>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						
+						<form action="cliente/cadastrarcliente" method="">
+							<button class="btn-add">
+								<img src="/img/person-x.svg" alt="person-x" class="icon"
+									title="Não informar">
+									
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7 estilo1" id="campos-cliente">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" placeholder="Nome">
+									<label for="floatingInput">Nome:</label>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" placeholder="Nome">
+									<label for="floatingInput">Contato:</label>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control"
+										placeholder="name@example.com"> <label
+										for="floatingInput">Endereço:</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control"
+										placeholder="name@example.com"> <label
+										for="floatingInput">Tipo contato:</label>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+
+			<div class="col-md-5 estilo1">
+				<input list="sabores" name="sabores" id="sabor" class="form-control"
+					placeholder="Selecione o Sabor" style="width: 300px;">
+				<datalist id="sabores">
+					<option value="HOMER">
+					<option value="NUTELLA">
+					<option value="BRIGADEIRO">
+					<option value="MARGIE">
+					<option value="NINU">
+					<option value="CANELA ACUCAR">
+					<option value="CHOCOLATE">
+					<option value="CHURROS">
+				</datalist>
+			</div>
+			<div class="col-md-7 estilo1" id="campo-produto">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control"
+								placeholder="floating-modal"> <label for="floatingInput">Nome:</label>
+						</div>
+					</div>
+					<div class="col-md-6 ">
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control"
+								placeholder="floating-modal"
+								style="width: 150px; text-align: center;"> <label
+								for="floatingInput">Qtde. Produto:</label>
+						</div>
+					</div>
+					<div class="col-md-3 ">
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control"
+								placeholder="floating-modal"
+								style="width: 150px; text-align: center;"> <label
+								for="floatingInput">Preço Unitário:</label>
+						</div>
+					</div>
+					<div class="col-md-3 ">
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control"
+								placeholder="floating-modal"
+								style="width: 150px; text-align: center;"> <label
+								for="floatingInput">SubTotal:</label>
+						</div>
+					</div>
+					<div class="col-md-3 ">
+						<div class="form-floating mb-3">
+							<input type="number" class="form-control"
+								placeholder="floating-modal"
+								style="width: 150px; text-align: center;"> <label
+								for="floatingInput">Qtde recheio:</label>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<form action="#">
+							<button type="submit" class="btn btn-primary"
+								style="margin-top: 15px;">Adicionar</button>
+						</form>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container-fluid">
+			<div class="row ">
+				<div class="col-md-8">
+					<div class="tab-content" id="orders-table-tab-content">
+						<div class="tab-pane fade show active" id="orders-all"
+							role="tabpanel" aria-labelledby="orders-all-tab">
+							<div class="app-card app-card-orders-table shadow-sm mb-5">
+								<div class="app-card-body">
+									<div class="table-responsive">
+										<table class="table app-table-hover mb-0 text-left">
+											<thead>
+												<tr>
+													<th class="cell">Produto</th>
+													<th class="cell">Quantidade</th>
+													<th class="cell">Valor (UN)</th>
+													<th class="cell">Quantidade Recheio</th>
+													<th class="cell">SubTotal</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="cell">Brigadeiro</td>
+													<td class="cell">1</td>
+													<td class="cell">7.00</td>
+													<td class="cell">1</td>
+													<td class="cell">24.00</td>
+												</tr>
+												<tr>
+													<td class="cell">Nutella</td>
+													<td class="cell">3</td>
+													<td class="cell">7.00</td>
+													<td class="cell">1</td>
+													<td class="cell">24.00</td>
+												<tr>
+													<td class="cell">Nutella</td>
+													<td class="cell">3</td>
+													<td class="cell">7.00</td>
+													<td class="cell">1</td>
+													<td class="cell">24.00</td>
+												</tr>
+												<tr>
+													<td class="cell">Brigadeiro</td>
+													<td class="cell">1</td>
+													<td class="cell">7.00</td>
+													<td class="cell">1</td>
+													<td class="cell">24.00</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-4 ">
+					<div class="row estilo-finan">
+						<div class="col-md-12">
+							<div class="financeiro">
+								<p>02/11/2021</p>
+								<p>VALOR TOTAL</p>
+								<p>0.00</p>
+							</div>
+						</div>
+						<div class="col-md-12 btn-financeiro">
+							
+								<button class="btn btn-danger">Deletar Item</button>
+						
+							
+								<button type="submit" class="btn btn-success"><a th:href="@{/venda/finalizar_venda}">Avançar</a></button>
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" 
+		src="/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript"
+	 src="/bootstrap/bootstrap.bundle.min.js"></script>	
+</body>
+</html>

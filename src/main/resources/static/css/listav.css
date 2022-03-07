@@ -1,0 +1,35 @@
+
+.filtro-data{
+    display: flex;
+    justify-content: space-between;
+}
+.buscar{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#geral{
+    margin-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+img{
+    width: 23px;
+}
+
+#botao-pesquisar{
+    cursor: pointer;
+    border: none;
+    background-color: #ffff;
+    border-radius: 4px;
+}
+
+#btn-print{
+
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 350px;
+    background-color: #ffff;
+    
+}

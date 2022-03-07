@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="head :: head">
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<link rel="stylesheet" href="/css/finalizar_venda.css">
+	
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 estilo titulo">
+                <p>PAGAMENTO</p>
+            </div>
+            <div class="col-md-6 estilo">
+                <p id="total-pagar">Total a pagar: <b>R$ 0.00</b></p>
+            </div>
+            <div class="col-md-6 estilo">
+                <select id="select-fp" class="form-select form-select-lg mb-3 " aria-label=".form-select-lg example">
+                    <option selected class="btn btn-dark dropdown-toggle">FORMA DE PAGAMENTO</option>
+                    <option value="1">CARTÃO</option>
+                    <option value="2">PIX</option>
+                    <option value="3">DINHEIRO</option>
+                </select>
+            </div>
+            <div class="col-md-12 estilo valor-troco">
+                <span class="valor-troco">Valor de entrada:</span>
+                <p><b class="valor-troco">R$ 0.00</b></p>
+            </div>
+            <div class="col-md-12 estilo valor-troco">
+                <span class="valor-troco">Troco:</span>
+                <p><b class="valor-troco">R$ 0.00</b></p>
+            </div>
+            <div class="col-md-12 estilo titulo">
+                <p>Finalizar venda</p>
+            </div>
+
+            <div class="col-md-12 estilo">
+                <div class="form-floating mb-3 end-entrega">
+                    <input type="text" class="form-control" id="input-obs" placeholder="name@example.com" style="width: 400px;">
+                    <label for="floatingInput">Endereço de entrega:</label>
+                </div>
+            </div>
+
+            <div class="col-md-12 estilo">
+                <textarea name="obs" id="obs" cols="40" rows="3" placeholder="Observações:"></textarea>
+            </div>
+
+            <div id="botoes-align" class="estilo">
+                <form method="" action="/tela-home/index.html">
+                    <button class="btn btn-success botao">
+                        Salvar
+                    </button>
+                </form>
+                <form method="" action="/tela-pdv/index.html">
+                    <button class="btn btn-danger botao">
+                        Cancelar
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" 
+		src="/bootstrap/bootstrap.min.js"></script>
+		
+</body>
+
+</html>

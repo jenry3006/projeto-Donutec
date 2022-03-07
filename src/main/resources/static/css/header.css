@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 #header{
-    border-width: 3px;
+    border-width: 2px;
     border-color: rgb(0,0,0);
     border-style: solid;
 }
@@ -30,7 +30,7 @@
     text-align: center;
 }
 
-.row {
+#nav {
     padding-top: 5px;
     justify-content: space-around;
 }

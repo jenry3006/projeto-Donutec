@@ -1,4 +1,4 @@
-@charset "ISO-8859-1";
+
 #form-container{
     margin: 10px auto;
     width: 600px;
@@ -28,5 +28,9 @@
 #parte-contato{
 	display: flex;
 	justify-content: space-between;
+}
+
+#select{
+	width: 300px
 }
 

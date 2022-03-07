@@ -1,0 +1,143 @@
+.estilo1{
+     background-color: #ffff; border: 1px solid;
+    } 
+.estilo-finan{
+    border-left: #000 2px solid;
+    border-bottom: solid 2px #000;
+  
+}    
+
+/* cliente */
+.btn-add{
+    border: none;
+    background-color: #ffff;
+}
+
+#btn-modal{
+	width: 90px; height: 50px;
+}
+
+#input-cdgc{
+    width: 120px;
+    text-align: center;
+}
+
+#btn-cdgc{
+    display: flex;
+    padding-top: 50px;
+    justify-content: space-evenly;
+}
+
+
+.icon{
+    width: 35px;
+    margin-top: 10px;
+}
+
+#campos-cliente{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.align-endereco{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* produto */
+
+#campo-cdgp{
+    padding-top: 55px;
+}
+
+#select-sabor {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#campo-produto{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn-produto{
+    height: 45px;
+    margin-top: 8px;
+}
+
+td{
+    text-align: left;
+}
+
+#sabor{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 62px;
+    width: 300px;
+    appearance: none;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+.campos-number{
+    width: 150px
+}
+
+/* lista/financeiro */
+
+.financeiro p{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+
+.btn-financeiro{
+    display: flex;
+    justify-content: space-around;
+    height: 42px;
+    margin-bottom: 10px;
+}
+
+.btn-financeiro  a{
+	text-decoration: none;
+	color: #ffff;
+}
+
+/*modal */
+#form-container{
+    margin: 10px auto;
+  
+}
+
+#textcadastro{
+    text-align: center;
+    font-size: 35px;
+    padding-top: initial;
+}
+
+.button{
+    margin-top: 30px;
+    justify-content: space-around;
+    display: flex;
+}
+
+#input-id{
+    width: 100px;
+    text-align: center;
+}
+
+.form-control{
+    margin-bottom: 5px;
+}

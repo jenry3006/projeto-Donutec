@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="head :: head">
+<meta charset="utf-8">
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+</head>
+<body>
+	
+	<link rel="stylesheet" href="/css/listav.css">
+	<link rel="stylesheet" href="/css/header.css">
+
+	<header th:insert="head :: header-fixo"></header>
+
+	<div id="geral">
+        <div class="container">
+            <div class="buscar">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2><b>Lista de Vendas</b></h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row filtro-data">
+                                <b>Filtro:</b>
+                                <input type="date">
+                                <b>até</b>
+                                <input type="date">
+                                <form action="#">
+                                    <button id="botao-pesquisar"><img src="/img/search.svg" alt="buscar"></button>
+                                </form>
+                        </div>
+                        <div class="col-md-12">
+                            <button id="btn-print">
+                               <span>Imprimir</span>
+                                <a id="print">
+                                    <img src="/img/printer.svg" alt="icon-print" title="imprimir" class="icon-print">
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-content" id="orders-table-tab-content">
+                <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                    <div class="app-card app-card-orders-table shadow-sm mb-5">
+                        <div class="app-card-body">
+                            <div class="table-responsive">
+                                <table class="table app-table-hover mb-0 text-left">
+                                    <thead>
+                                        <tr>
+                                            <th class="cell">ID</th>
+                                            <th class="cell">Data</th>
+                                            <th class="cell">Endereço</th>
+                                            <th class="cell">Pagamento</th>
+                                            <th class="cell">Total</th>
+                                            <th class="cell">Observação</th>
+                                            <th class="cell"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="cell"> teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell"><button class="btn btn-danger ">Deletar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cell"> teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell"><button class="btn btn-danger ">Deletar</button></td>
+                                        </tr> <tr>
+                                            <td class="cell"> teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell"><button class="btn btn-danger ">Deletar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cell"> teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell"><button class="btn btn-danger ">Deletar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cell"> teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell"><button class="btn btn-danger ">Deletar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cell"> teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell"><button class="btn btn-danger ">Deletar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cell"> teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell">teste</td>
+                                            <td class="cell"><button class="btn btn-danger ">Deletar</button></td>
+                                        </tr>
+                                       
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+</body>
+</html>

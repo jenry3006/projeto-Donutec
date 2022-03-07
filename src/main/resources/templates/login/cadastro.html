@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastrou.css">
+   <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+
+    <title>Cadastro usuario</title>
+</head>
+
+<body>
+<div class="containerp">
+    <div class="corpo">
+
+        <p id="titulo">Cadastrar usuário</p>
+  
+        <h6>
+            Preencha os dados para criar um novo usuário.
+        </h6>
+	
+		
+         <div class="alert alert-danger"
+						th:if="${not #strings.isEmpty(erros)}">
+						<div>
+							<span th:text="${erros}"></span>
+						</div>
+					</div>
+		
+					
+		
+		
+        <form method="post" th:object="${usuario}" action="" th:action="@{salvarUsuario}">
+        
+        			
+         
+            <input type="text" class="form-control campos" th:field="*{email}" style="width: 400px;" placeholder="Informe o seu email"
+            th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : ''"      >
+             <div class="invalid-feedback" th:errors="*{email}"></div>
+
+            <input type="text" class="form-control campos"  th:field="*{nome}" style="width: 400px;"
+                   placeholder="Informe seu nome de usuário">
+
+            <input type="password" class="form-control campos" th:field="*{senha}" style="width: 400px;" placeholder="Informe a senha">
+
+            <button type="submit" id="bt-logar" class="btn btn-primary">Cadastrar</button>
+
+            <br>
+
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript"
+		src="/bootstrap/bootstrap.min.js"></script>
+</body>
+
+</html>
